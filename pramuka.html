@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulir Pendaftaran Ekstrakurikuler SMK Negeri Tengaran">
+  <title>Formulir Pendaftaran | EkskulSata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-daftar">
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">Ekskul<span>Sata</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Kembali ke Beranda</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-daftar">
+    <div class="form-wrapper">
+      <a href="index.html" class="btn-back">&larr; Kembali</a>
+      
+      <form id="formDaftar" class="form-card" novalidate>
+        <h2>Formulir Pendaftaran</h2>
+        <p class="sub">Isi data diri kamu untuk mendaftar ekstrakurikuler.</p>
+
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" autocomplete="name" placeholder="Contoh: Budi Santoso">
+          <small class="pesan-error" role="alert"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Alamat Email</label>
+          <input type="email" id="email" autocomplete="email" placeholder="nama@email.com">
+          <small class="pesan-error" role="alert"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="password" autocomplete="new-password" placeholder="Minimal 8 karakter">
+            <button type="button" class="toggle" data-target="password">Lihat</button>
+          </div>
+          <div class="strength"><span id="strengthBar"></span></div>
+          <small class="kekuatan" id="kekuatanTeks"></small>
+          <small class="pesan-error" role="alert"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="konfirmasi">Konfirmasi Password</label>
+          <div class="password-wrap">
+            <input type="password" id="konfirmasi" autocomplete="new-password" placeholder="Ketik ulang password">
+            <button type="button" class="toggle" data-target="konfirmasi">Lihat</button>
+          </div>
+          <small class="pesan-error" role="alert"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="ekskul">Pilihan Ekstrakurikuler</label>
+          <select id="ekskul">
+            <option value="">-- Pilih Ekstrakurikuler --</option>
+            <option value="pramuka">Pramuka</option>
+            <option value="paskibra">Paskibra</option>
+            <option value="rohis">Rohis</option>
+            <option value="pmr">PMR</option>
+            <option value="mtq">MTQ</option>
+            <option value="drumband">Drumband</option>
+            <option value="rebana">Rebana</option>
+            <option value="pencak silat">Pencak Silat</option>
+            <option value="tari">Seni Tari</option>
+            <option value="paduan suara">Paduan Suara</option>
+            <option value="fooster">Fooster</option>
+            <option value="futsal">Futsal</option>
+            <option value="voli">Voli</option>
+            <option value="jepang">Bahasa Jepang</option>
+            <option value="jurnalistik">Jurnalistik</option>
+          </select>
+          <small class="pesan-error" role="alert"></small>
+        </div>
+
+        <button type="submit" class="btn">Daftar Sekarang</button>
+        <p id="pesanSukses" class="pesan-sukses" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="copy">&copy; 2026 EkskulSata. Platform Pengembangan Minat &amp; Bakat Siswa SMK Negeri Tengaran</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
