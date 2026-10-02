@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ekstrakurikuler Pramuka SMK Negeri Tengaran">
+  <title>Pramuka | EkskulSata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html#beranda" class="logo">Ekskul<span>Sata</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#beranda">Beranda</a></li>
+      <li><a href="index.html#ekstrakurikuler">Ekstrakurikuler</a></li>
+      <li><a href="#daftar">Daftar</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <header class="header">
+    <div class="header-isi">
+      <p class="badge">Ekstrakurikuler · Pramuka</p>
+      <h1>Pramuka,<br>Tempa Karakter Tangguh.</h1>
+      <p class="lead">Belajar mandiri, disiplin, dan memimpin lewat petualangan seru bersama teman-teman satu gugus depan.</p>
+    </div>
+  </header>
+
+  <!-- Pengenalan Pramuka -->
+  <section class="info-section">
+    <div class="container">
+      <h2>Mengenal Pramuka</h2>
+      <p class="info-intro">Pramuka adalah gerakan kepanduan Indonesia yang diperingati setiap 14 Agustus. Di sekolah, Pramuka menjadi wadah pembinaan karakter lewat latihan rutin, permainan, dan kegiatan di alam terbuka.</p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Kemandirian</h3>
+          <p>Terbiasa mengatur diri sendiri, menyelesaikan tugas, dan percaya diri menghadapi tantangan.</p>
+        </div>
+        <div class="info-card">
+          <h3>Kedisiplinan</h3>
+          <p>Melatih tanggung jawab dan ketepatan lewat baris-berbaris serta aturan kegiatan.</p>
+        </div>
+        <div class="info-card">
+          <h3>Kepemimpinan</h3>
+          <p>Berlatih memimpin regu, mengambil keputusan, dan bekerja sama dalam tim.</p>
+        </div>
+        <div class="info-card">
+          <h3>Cinta Alam</h3>
+          <p>Mengenal lingkungan lewat kemah, penjelajahan, dan kegiatan peduli sekitar.</p>
+        </div>
+      </div>
+
+      <h3 class="info-subtitle">Kegiatan yang Dipelajari</h3>
+      <ul class="info-list">
+        <li>Baris-berbaris</li>
+        <li>Tali-temali</li>
+        <li>Sandi &amp; Semaphore</li>
+        <li>Pionering</li>
+        <li>Pertolongan Pertama</li>
+        <li>Perkemahan</li>
+        <li>Penjelajahan</li>
+        <li>Dasa Darma &amp; Tri Satya</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Formulir Pendaftaran -->
+  <section class="form-section" id="daftar">
+    <div class="form-wrapper">
+      <a href="index.html#ekstrakurikuler" class="btn-back">&larr; Kembali ke Ekstrakurikuler</a>
+
+      <div class="form-card">
+        <h2>Daftar Pramuka</h2>
+        <p class="sub">Isi data di bawah ini untuk bergabung.</p>
+
+        <form id="formDaftar" novalidate>
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+            <span class="pesan-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="nama">Kelas</label>
+            <input type="text" id="nama" placeholder="Masukkan Kelas">
+            <span class="pesan-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="nama@email.com">
+            <span class="pesan-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrap">
+              <input type="password" id="password" placeholder="Minimal 8 karakter">
+              <button type="button" class="toggle" data-target="password">Lihat</button>
+            </div>
+            <div class="strength"><span id="strengthBar"></span></div>
+            <small class="kekuatan" id="kekuatanTeks"></small>
+            <span class="pesan-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="konfirmasi">Konfirmasi Password</label>
+            <div class="password-wrap">
+              <input type="password" id="konfirmasi" placeholder="Ulangi password">
+              <button type="button" class="toggle" data-target="konfirmasi">Lihat</button>
+            </div>
+            <span class="pesan-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="ekskul">Pilihan Ekstrakurikuler</label>
+            <select id="ekskul">
+              <option value="">-- Pilih Ekstrakurikuler --</option>
+              <option value="pramuka" selected>Pramuka</option>
+              <option value="paskibra">Paskibra</option>
+              <option value="rohis">Rohis</option>
+              <option value="pmr">PMR</option>
+              <option value="mtq">MTQ</option>
+              <option value="drumband">Drumband</option>
+              <option value="rebana">Rebana</option>
+              <option value="silat">Pencak Silat</option>
+              <option value="tari">Seni Tari</option>
+              <option value="padus">Padus</option>
+              <option value="foster">Foster</option>
+              <option value="futsal">Futsal</option>
+              <option value="voli">Voli</option>
+              <option value="jepang">Bahasa Jepang</option>
+              <option value="jurnalistik">Jurnalistik</option>
+            </select>
+            <span class="pesan-error"></span>
+          </div>
+
+          <button type="submit" class="btn">Daftar Sekarang</button>
+          <div class="pesan-sukses" id="pesanSukses"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="kontak">
+    <div class="footer-isi">
+      <div>
+        <div class="logo">Ekskul<span>Sata</span></div>
+        <p>Wadah siswa mengembangkan minat dan bakat terbaiknya.</p>
+      </div>
+      <div>
+        <p><a href="https://www.instagram.com/smkn1tengaran_bisa" target="_blank" rel="noopener">SMK Negeri Tengaran (Instagram)</a></p>
+        <p>Dibuat oleh <strong>Aulia &amp; Lutfi</strong>, Kelas XI RPL 3</p>
+      </div>
+    </div>
+    <p class="copy">&copy; 2026 EkskulSata. Platform Pengembangan Minat &amp; Bakat Siswa SMK Negeri Tengaran</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
