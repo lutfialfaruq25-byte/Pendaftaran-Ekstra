@@ -584,3 +584,677 @@ body {
     text-align: center;
   }
 }
+
+/* pramuka */
+/* ==========================================================
+   EkskulSata - style.css 
+   ========================================================== */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #eef2ff;
+  --accent: #0284c7;
+  --accent-gold: #d97706;
+  
+  /* Latar Header (Biru Tua Gradasi) */
+  --header-bg-start: #0f172a;
+  --header-bg-end: #1e293b;
+  
+  /* Latar Ekskul (Biru Muda Gradasi ke Putih) */
+  --ekskul-bg-start: #e0f2fe;
+  --ekskul-bg-end: #ffffff;
+  
+  /* Kartu Ekskul */
+  --card-bg: #ffffff;
+  --card-border: #bae6fd;
+  
+  --ink: #1e293b;
+  --muted: #64748b;
+  --paper: #ffffff;
+  --field: #f8fafc;
+  --line: #e2e8f0;
+  
+  --ok: #10b981;
+  --err: #ef4444;
+
+  --shadow-card: 0 10px 25px -5px rgba(2, 132, 199, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 18px 30px -10px rgba(2, 132, 199, 0.22);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--header-bg-start);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #38bdf8;
+}
+
+/* Logo navbar tanpa warna biru */
+.navbar .logo span {
+  color: #fff;
+  transition: color 0.25s ease;
+}
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  padding: 8px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: 99px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background: #0284c7;
+}
+
+
+
+/* Header (Gradasi Biru Tua) */
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 100px 6% 80px;
+  background: linear-gradient(180deg, var(--header-bg-start) 0%, var(--header-bg-end) 100%);
+}
+
+.header-isi {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 99px;
+}
+
+.badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+}
+
+.header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Section Ekstrakurikuler (Gradasi Biru Muda -> Putih) */
+#ekstrakurikuler {
+  padding: 80px 6% 90px;
+  background: linear-gradient(180deg, var(--ekskul-bg-start) 0%, var(--ekskul-bg-end) 100%);
+  color: var(--ink);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#ekstrakurikuler h2 {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #475569;
+  max-width: 540px;
+  margin: 0 auto 40px;
+}
+
+/* Slider Horizontal Card Ekskul */
+.ekskul-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 15px 10px 35px;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
+}
+
+.ekskul-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ekskul-slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ekskul-slider::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 20px;
+}
+
+/* Kotakan Kartu Ekskul */
+.ekskul-card {
+  flex: 0 0 290px;
+  min-width: 290px;
+  scroll-snap-align: start;
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 380px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ekskul-card:hover {
+  transform: translateY(-8px);
+  border-color: #0284c7;
+  box-shadow: var(--shadow-hover);
+}
+
+.card-num {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: auto;
+}
+
+.btn-selengkapnya {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 10px 20px;
+  background: var(--primary-light);
+  border: 1px solid #c7d2fe;
+  border-radius: 99px;
+  transition: all 0.25s ease;
+  margin-top: 16px;
+}
+
+.btn-selengkapnya:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* Section CTA Pendaftaran */
+.main {
+  padding: 90px 6%;
+  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.cta-banner {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.cta-banner h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.cta-banner p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 16px 36px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-cta:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+/* Halaman Pendaftaran Terpisah (daftar.html) */
+.page-daftar {
+  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-daftar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 6%;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+.btn-back {
+  display: inline-block;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  transition: opacity 0.2s;
+}
+
+.btn-back:hover {
+  opacity: 0.8;
+}
+
+.form-card {
+  background: var(--paper);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.3);
+}
+
+.form-card h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.sub {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 4px 0 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1e293b;
+  background: var(--field);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  background: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+}
+
+.form-group.error input,
+.form-group.error select {
+  border-color: var(--err);
+  background: #fef2f2;
+}
+
+.form-group.success input,
+.form-group.success select {
+  border-color: var(--ok);
+  background: #f0fdf4;
+}
+
+.pesan-error {
+  display: none;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--err);
+}
+
+.form-group.error .pesan-error {
+  display: block;
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 80px;
+}
+
+.toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.toggle:hover {
+  background: var(--primary-light);
+}
+
+.strength {
+  height: 5px;
+  margin-top: 8px;
+  background: var(--line);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.strength span {
+  display: block;
+  height: 100%;
+  width: 0;
+  transition: all 0.3s ease;
+}
+
+.kekuatan {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.pesan-sukses {
+  display: none;
+  margin-top: 20px;
+  padding: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #065f46;
+  background: #d1fae5;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+}
+
+/* Footer */
+.footer {
+  padding: 50px 6% 24px;
+  background: #070d1e;
+  color: #94a3b8;
+}
+
+.footer-isi {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+}
+
+.footer .logo {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.footer strong {
+  color: #fff;
+}
+
+.copy {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .form-card {
+    padding: 24px 20px;
+  }
+  
+  .footer-isi {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   Halaman Detail Ekskul (pramuka.html, dst.)
+   ========================================================== */
+.info-section {
+  padding: 80px 6%;
+  background: linear-gradient(180deg, var(--ekskul-bg-start) 0%, var(--ekskul-bg-end) 100%);
+  color: var(--ink);
+}
+
+.info-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.info-intro {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+  color: #475569;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 56px;
+}
+
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.info-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 0.92rem;
+  color: #475569;
+}
+
+.info-subtitle {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.info-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-list li {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  border: 1px solid #c7d2fe;
+  border-radius: 99px;
+}
+
+.form-section {
+  padding: 80px 6%;
+  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+  display: flex;
+  justify-content: center;
+}
